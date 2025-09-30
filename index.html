@@ -1,81 +1,584 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav>
-      <div class="logo">Your Name</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issa Safar | Dark Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Lucide Icons for contact details -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      /* Custom styles for the dark theme */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #1a1a1a; /* Very dark gray/black background */
+        color: #e5e7eb; /* Light gray text */
+      }
+      .main-container {
+        /* Ensures proper padding for the content section */
+        padding-top: 1.5rem;
+      }
+      .sidebar {
+        background-color: #262626; /* Slightly lighter gray for sidebar */
+      }
+      .content-section {
+        background-color: #1a1a1a; /* Main content area matches body */
+      }
+      /* Removed .nav-link styles as the navigation is gone */
+      .repo-card,
+      .service-card {
+        background-color: #262626;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 1px solid #374151; /* Dark border */
+      }
+      .repo-card:hover,
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow:
+          0 10px 15px -3px rgba(0, 0, 0, 0.3),
+          0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        border-color: #3b82f6;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 main-container lg:grid lg:grid-cols-12 lg:gap-8"
+    >
+      <!-- LEFT COLUMN: Profile Sidebar -->
+      <aside
+        class="sidebar lg:col-span-3 rounded-xl p-6 mb-8 lg:mb-0 sticky top-4 self-start shadow-xl"
+      >
+        <!-- Avatar and Name -->
+        <div class="text-center pb-6 border-b border-gray-700">
+          <img
+            src="https://placehold.co/128x128/3b82f6/ffffff?text=IS"
+            alt="Profile Avatar"
+            class="rounded-full mx-auto mb-4 border-4 border-gray-700"
+          />
+          <h2 class="text-2xl font-bold text-gray-50 mb-1">Issa Safar</h2>
+          <p
+            class="text-blue-400 text-sm font-medium bg-gray-700 inline-block px-3 py-1 rounded-full"
+          >
+            Software Developer
+          </p>
+        </div>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm <span>Your Name</span></h1>
-      <p>A short tagline about you (e.g., Developer | Designer | Engineer)</p>
-      <a href="#contact" class="btn">Hire Me</a>
+        <!-- Contact Information -->
+        <div class="pt-6 space-y-4 text-sm">
+          <div class="flex items-center space-x-3">
+            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+            <span class="text-gray-300">issaalisafar@gmail.com</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+            <span class="text-gray-300">+963 953 270 416</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-blue-400"></i>
+            <span class="text-gray-300">Syria, Homs</span>
+          </div>
+        </div>
+
+        <!-- Social Links (TELEGRAM ADDED) -->
+        <div class="mt-6 flex justify-center space-x-5 text-gray-400">
+          <a
+            href="https://linkedin.com/in/issasafar"
+            target="_blank"
+            class="hover:text-blue-400 transition-colors"
+          >
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="https://github.com/issasafar"
+            target="_blank"
+            class="hover:text-blue-400 transition-colors"
+          >
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <!-- Telegram Link -->
+          <a
+            href="https://t.me/issasafar"
+            target="_blank"
+            class="hover:text-blue-400 transition-colors"
+          >
+            <i data-lucide="send" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN: Main Content -->
+      <main class="lg:col-span-9 content-section">
+        <!-- 1. About Me Section (UPDATED) -->
+        <section id="about" class="mb-12">
+          <h3 class="text-3xl font-bold text-gray-100 mb-6">About Me</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            I am a dedicated **Mobile and Backend Developer** specializing in
+            building robust, high-performance applications. My core expertise
+            lies in **Native Android Development** using **Kotlin** and modern
+            frameworks like **Jetpack Compose** for polished, responsive user
+            interfaces.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            On the backend, I leverage **Java and Spring Boot** to design and
+            implement scalable RESTful APIs following **Clean Architecture**
+            principles. I am focused on delivering high-quality code, ensuring
+            systems are both efficient and maintainable. Let's build something
+            exceptional.
+          </p>
+        </section>
+
+        <!-- 2. What I'm Doing Section (Services) -->
+        <section class="mb-12">
+          <h3 class="text-3xl font-bold text-gray-100 mb-6">What I'm Doing</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Service Card 1: Native Android Development (Updated for Kotlin/Compose) -->
+            <div class="service-card p-6 rounded-xl shadow-lg">
+              <i
+                data-lucide="smartphone"
+                class="w-8 h-8 text-blue-400 mb-3"
+              ></i>
+              <h4 class="text-xl font-semibold text-gray-50 mb-2">
+                Native Android Development
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Specializing in **Kotlin**, **Jetpack Compose** for modern UI,
+                and robust development for the Android platform.
+              </p>
+            </div>
+            <!-- Service Card 2: Backend API Development (Updated for Spring Boot) -->
+            <div class="service-card p-6 rounded-xl shadow-lg">
+              <i data-lucide="server" class="w-8 h-8 text-blue-400 mb-3"></i>
+              <h4 class="text-xl font-semibold text-gray-50 mb-2">
+                Backend API Development (Spring)
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Building scalable, secure RESTful APIs and microservices using
+                **Spring Boot** with an intermediate proficiency level.
+              </p>
+            </div>
+            <!-- Service Card 3: Architecture & Quality (Updated for Clean Arch) -->
+            <div class="service-card p-6 rounded-xl shadow-lg">
+              <i data-lucide="layers" class="w-8 h-8 text-blue-400 mb-3"></i>
+              <h4 class="text-xl font-semibold text-gray-50 mb-2">
+                Clean Architecture & Quality
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Implementing high-quality code structures using **Clean
+                Architecture** principles and domain-driven design.
+              </p>
+            </div>
+            <!-- Service Card 4: UI/UX (Mobile Focus) -->
+            <div class="service-card p-6 rounded-xl shadow-lg">
+              <i data-lucide="layout" class="w-8 h-8 text-blue-400 mb-3"></i>
+              <h4 class="text-xl font-semibold text-gray-50 mb-2">
+                Mobile-First UI/UX Design
+              </h4>
+              <p class="text-gray-400 text-sm">
+                Designing intuitive, component-based user experiences with a
+                focus on mobile best practices (e.g., Compose UI).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2B. Skills and Technologies Section -->
+        <section id="skills" class="mb-12 pt-8">
+          <h3
+            class="text-3xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-2"
+          >
+            Technical Expertise
+          </h3>
+
+          <div class="flex flex-wrap gap-3">
+            <!-- Mobile Development -->
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300 border border-blue-700"
+            >
+              <i data-lucide="android" class="w-4 h-4 mr-2"></i> Android SDK
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300 border border-blue-700"
+            >
+              <i data-lucide="type" class="w-4 h-4 mr-2"></i> Kotlin
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300 border border-blue-700"
+            >
+              <i data-lucide="layout-grid" class="w-4 h-4 mr-2"></i> Jetpack
+              Compose
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300 border border-blue-700"
+            >
+              <i data-lucide="layers" class="w-4 h-4 mr-2"></i> Clean
+              Architecture
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-blue-900 text-blue-300 border border-blue-700"
+            >
+              <i data-lucide="monitor" class="w-4 h-4 mr-2"></i> MVVM/MVI
+            </span>
+
+            <!-- Backend/Languages -->
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300 border border-green-700"
+            >
+              <i data-lucide="leaf" class="w-4 h-4 mr-2"></i> Spring Boot
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300 border border-green-700"
+            >
+              <i data-lucide="coffee" class="w-4 h-4 mr-2"></i> Java
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300 border border-green-700"
+            >
+              <i data-lucide="git-branch" class="w-4 h-4 mr-2"></i> Git
+            </span>
+            <span
+              class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-green-900 text-green-300 border border-green-700"
+            >
+              <i data-lucide="plug-2" class="w-4 h-4 mr-2"></i> RESTful APIs
+            </span>
+          </div>
+        </section>
+
+        <!-- 3A. DEDICATED FEATURED PROJECT: SHADESTREAM -->
+        <section id="shadestream-detail" class="mb-12 pt-8">
+          <h3
+            class="text-3xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-2"
+          >
+            Shadestream: UI Showcase
+          </h3>
+
+          <div class="repo-card p-6 rounded-xl shadow-lg">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">
+              Shadestream
+            </h4>
+            <p class="text-gray-400 mb-6">
+              A modern video and content streaming platform showcasing a
+              highly-polished, responsive user interface, built with Flutter.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6">
+              <!-- Left: Image Gallery -->
+              <div class="md:w-3/4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <!-- Using raw GitHub content links for the images -->
+                <img
+                  src="https://raw.githubusercontent.com/issasafar/shadestream/main/assets/sign_screen.png"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=Sign+Screen';"
+                  alt="Shadestream Sign-In Screen"
+                  class="w-full h-auto rounded-lg object-cover border-2 border-blue-600 shadow-xl"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/issasafar/shadestream/main/assets/profile_1.png"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=Profile+Screen';"
+                  alt="Shadestream Profile Screen"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/issasafar/shadestream/main/assets/chat.png"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=Chat+Screen';"
+                  alt="Shadestream Chat Feature"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700 hidden sm:block"
+                />
+              </div>
+
+              <!-- Right: View More Button -->
+              <div
+                class="md:w-1/4 flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl"
+              >
+                <p class="text-sm text-gray-300 mb-3 text-center">
+                  See the full codebase, technical architecture, and
+                  documentation.
+                </p>
+                <a
+                  href="https://github.com/issasafar/shadestream"
+                  target="_blank"
+                  class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors w-full"
+                >
+                  <i data-lucide="github" class="w-4 h-4 mr-2"></i> View
+                  Shadestream Repo
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3B. DEDICATED FEATURED PROJECT: HEALTHCORE -->
+        <section id="healthcore-detail" class="mb-12 pt-8">
+          <h3
+            class="text-3xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-2"
+          >
+            HealthCore: UI Showcase
+          </h3>
+
+          <div class="repo-card p-6 rounded-xl shadow-lg">
+            <h4 class="text-2xl font-semibold text-blue-400 mb-2">
+              HealthCore
+            </h4>
+            <p class="text-gray-400 mb-6">
+              A comprehensive mobile health monitoring application, featuring
+              secure data tracking and a clean, user-focused dashboard. Built
+              with modern framework technologies.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6">
+              <!-- Left: Image Gallery -->
+              <div class="md:w-3/4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <!-- FIX: Changed branch from /main/ to /master/ as requested. -->
+                <img
+                  src="https://raw.githubusercontent.com/issasafar/healthcore/master/assets/hc_1.jpg"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=HC+Screen+1';"
+                  alt="HealthCore Screenshot 1"
+                  class="w-full h-auto rounded-lg object-cover border-2 border-blue-600 shadow-xl"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/issasafar/healthcore/master/assets/hc_2.jpg"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=HC+Screen+2';"
+                  alt="HealthCore Screenshot 2"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/issasafar/healthcore/master/assets/hc_3.jpg"
+                  onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=HC+Screen+3';"
+                  alt="HealthCore Screenshot 3"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700 hidden sm:block"
+                />
+              </div>
+
+              <!-- Right: View More Button -->
+              <div
+                class="md:w-1/4 flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl"
+              >
+                <p class="text-sm text-gray-300 mb-3 text-center">
+                  See the full codebase, technical architecture, and
+                  documentation.
+                </p>
+                <a
+                  href="https://github.com/issasafar/HealthCore"
+                  target="_blank"
+                  class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors w-full"
+                >
+                  <i data-lucide="github" class="w-4 h-4 mr-2"></i> View
+                  HealthCore Repo
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3C. Projects Section (Remaining GitHub Repositories) -->
+        <section id="projects" class="pt-8">
+          <h3
+            class="text-3xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-2"
+          >
+            Other Featured Projects
+          </h3>
+
+          <!-- Loading State/Error Message -->
+          <div
+            id="repo-status"
+            class="text-center p-6 text-gray-400 bg-gray-800 rounded-xl shadow-inner"
+          >
+            <svg
+              class="animate-spin h-6 w-6 text-blue-400 mx-auto mb-2"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Fetching repositories from GitHub...
+          </div>
+
+          <!-- Repository Grid -->
+          <div id="repo-list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+            <!-- Repositories will be injected here by JavaScript -->
+          </div>
+        </section>
+      </main>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Write a short bio here about who you are, your background, and what you do.</p>
-  </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-10 py-6">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400"
+      >
+        <p>
+          &copy; <span id="current-year"></span> Issa Safar. Data sourced from
+          GitHub.
+        </p>
+      </div>
+    </footer>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Kotlin</div>
-      <!-- Add more skills -->
-    </div>
-  </section>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+      // Initialize Lucide icons
+      lucide.createIcons();
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Project Title</h3>
-      <p>Short description of the project.</p>
-      <a href="#" target="_blank">View Project</a>
-    </div>
-    <div class="project-card">
-      <h3>Another Project</h3>
-      <p>Short description of the project.</p>
-      <a href="#" target="_blank">View Project</a>
-    </div>
-  </section>
+      const GITHUB_USERNAME = "issasafar";
+      const API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos`;
+      const repoList = document.getElementById("repo-list");
+      const repoStatus = document.getElementById("repo-status");
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+      /**
+       * Converts a date string to a human-readable format.
+       * @param {string} dateString - The ISO date string.
+       * @returns {string} - Formatted date.
+       */
+      const formatDate = (dateString) => {
+        const options = { year: "numeric", month: "short", day: "numeric" };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+      };
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
-  </footer>
-</body>
+      /**
+       * Creates the HTML structure for a single repository card.
+       * Includes a GitHub badge/icon next to the name.
+       * @param {object} repo - The repository object from the GitHub API.
+       * @returns {string} - The HTML string for the card.
+       */
+      const createRepoCard = (repo) => {
+        const description = repo.description || "No description provided.";
+        const language = repo.language || "N/A";
+        const stars = repo.stargazers_count;
+        const updated = formatDate(repo.updated_at);
+
+        return `
+                <div class="repo-card p-6 rounded-xl shadow-lg flex flex-col justify-between">
+                    <div>
+                        <!-- GitHub Badge Link structure -->
+                        <a href="${repo.html_url}" target="_blank" class="text-xl font-semibold text-blue-400 hover:text-blue-300 transition-colors block mb-2 group flex items-center justify-between">
+                            <span>${repo.name}</span>
+                            <i data-lucide="github" class="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                        </a>
+                        <p class="text-gray-400 text-sm mb-4">${description}</p>
+                    </div>
+                    <div class="space-y-2 text-sm mt-auto border-t border-gray-700 pt-4">
+                        <div class="flex items-center text-gray-500">
+                            <i data-lucide="star" class="w-4 h-4 mr-1 text-yellow-500"></i>
+                            <span>${stars} Stars</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <i data-lucide="code" class="w-4 h-4 mr-1 text-green-400"></i>
+                            <span>${language}</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <i data-lucide="clock" class="w-4 h-4 mr-1 text-gray-500"></i>
+                            <span>Updated: ${updated}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+      };
+
+      /**
+       * Renders the empty state with a call-to-action button.
+       * @param {string} message - The message to display.
+       */
+      const renderEmptyState = (message) => {
+        repoStatus.style.display = "none"; // Hide initial loading status
+        repoList.innerHTML = `
+                <div class="col-span-full text-center p-8 rounded-xl border border-gray-700 bg-gray-800 space-y-4">
+                    <p class="text-lg font-medium text-gray-300">${message}</p>
+                    <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" 
+                       class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                        <i data-lucide="github" class="w-5 h-5 mr-2"></i> 
+                        View All Projects on GitHub
+                    </a>
+                </div>
+            `;
+        lucide.createIcons(); // Re-create icons for the new button
+      };
+
+      /**
+       * Fetches repositories and renders them to the DOM.
+       */
+      const fetchAndRenderRepos = async () => {
+        // List of important projects to display (EXCLUDING 'shadestream' and 'healthcore')
+        const IMPORTANT_PROJECTS = ["anonymos", "myshop"];
+
+        try {
+          const response = await fetch(API_URL);
+
+          if (!response.ok) {
+            throw new Error(`GitHub API returned status: ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          // Clear loading status
+          repoStatus.style.display = "none";
+
+          if (data.length === 0) {
+            renderEmptyState(
+              `No public repositories found for ${GITHUB_USERNAME}.`,
+            );
+            return;
+          }
+
+          // Filter out forks AND filter for the remaining important project names
+          const publicRepos = data
+            .filter(
+              (repo) => !repo.fork && IMPORTANT_PROJECTS.includes(repo.name),
+            )
+            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+          // Check if any filtered repositories were found (UPDATED LOGIC HERE)
+          if (publicRepos.length === 0) {
+            renderEmptyState(
+              `The specific featured projects are not available, but you can see all repositories.`,
+            );
+            return;
+          }
+
+          // Generate HTML for all cards and inject into the container
+          repoList.innerHTML = publicRepos.map(createRepoCard).join("");
+
+          // Re-initialize Lucide icons for the newly injected content
+          lucide.createIcons();
+        } catch (error) {
+          console.error("Error fetching GitHub repositories:", error);
+          // Display error with the GitHub button as a fallback (UPDATED LOGIC HERE)
+          repoStatus.classList.remove("animate-spin", "text-blue-400");
+          repoStatus.classList.add(
+            "bg-red-900",
+            "text-red-400",
+            "border",
+            "border-red-500",
+          );
+          renderEmptyState(
+            `Error loading projects. (Details: ${error.message})`,
+          );
+          lucide.createIcons();
+        }
+      };
+
+      // Initialize fetching on page load
+      fetchAndRenderRepos();
+    </script>
+  </body>
 </html>
