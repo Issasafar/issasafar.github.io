@@ -21,8 +21,8 @@
         color: #e5e7eb; /* Light gray text */
       }
       .main-container {
-        /* Ensures proper padding for the content section */
-        padding-top: 1.5rem;
+        /* Adjusted padding for better mobile fit */
+        padding-top: 1rem; /* Reduced from 1.5rem */
       }
       .sidebar {
         background-color: #262626; /* Slightly lighter gray for sidebar */
@@ -30,7 +30,6 @@
       .content-section {
         background-color: #1a1a1a; /* Main content area matches body */
       }
-      /* Removed .nav-link styles as the navigation is gone */
       .repo-card,
       .service-card {
         background-color: #262626;
@@ -54,8 +53,9 @@
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 main-container lg:grid lg:grid-cols-12 lg:gap-8"
     >
       <!-- LEFT COLUMN: Profile Sidebar -->
+      <!-- On mobile, the sidebar takes full width (default) and stacks above the main content. -->
       <aside
-        class="sidebar lg:col-span-3 rounded-xl p-6 mb-8 lg:mb-0 sticky top-4 self-start shadow-xl"
+        class="sidebar lg:col-span-3 rounded-xl p-6 mb-8 lg:mb-0 lg:sticky lg:top-4 lg:self-start shadow-xl"
       >
         <!-- Avatar and Name -->
         <div class="text-center pb-6 border-b border-gray-700">
@@ -271,32 +271,34 @@
             </p>
 
             <div class="flex flex-col md:flex-row gap-6">
-              <!-- Left: Image Gallery -->
-              <div class="md:w-3/4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <!-- Using raw GitHub content links for the images -->
+              <!-- Left: Image Gallery (Now w-full on mobile) -->
+              <div
+                class="w-full md:w-3/4 grid grid-cols-2 sm:grid-cols-3 gap-3"
+              >
+                <!-- NOTE: Added min-h-[120px] to fix image size collapse on mobile -->
                 <img
                   src="https://raw.githubusercontent.com/issasafar/shadestream/main/assets/sign_screen.png"
                   onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=Sign+Screen';"
                   alt="Shadestream Sign-In Screen"
-                  class="w-full h-auto rounded-lg object-cover border-2 border-blue-600 shadow-xl"
+                  class="w-full h-auto rounded-lg object-cover border-2 border-blue-600 shadow-xl min-h-[120px]"
                 />
                 <img
                   src="https://raw.githubusercontent.com/issasafar/shadestream/main/assets/profile_1.png"
                   onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=Profile+Screen';"
                   alt="Shadestream Profile Screen"
-                  class="w-full h-auto rounded-lg object-cover border border-gray-700"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700 min-h-[120px]"
                 />
                 <img
                   src="https://raw.githubusercontent.com/issasafar/shadestream/main/assets/chat.png"
                   onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=Chat+Screen';"
                   alt="Shadestream Chat Feature"
-                  class="w-full h-auto rounded-lg object-cover border border-gray-700 hidden sm:block"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700 hidden sm:block min-h-[120px]"
                 />
               </div>
 
-              <!-- Right: View More Button -->
+              <!-- Right: View More Button (Now w-full on mobile) -->
               <div
-                class="md:w-1/4 flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl"
+                class="w-full md:w-1/4 flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl"
               >
                 <p class="text-sm text-gray-300 mb-3 text-center">
                   See the full codebase, technical architecture, and
@@ -334,32 +336,34 @@
             </p>
 
             <div class="flex flex-col md:flex-row gap-6">
-              <!-- Left: Image Gallery -->
-              <div class="md:w-3/4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <!-- FIX: Changed branch from /main/ to /master/ as requested. -->
+              <!-- Left: Image Gallery (Now w-full on mobile) -->
+              <div
+                class="w-full md:w-3/4 grid grid-cols-2 sm:grid-cols-3 gap-3"
+              >
+                <!-- NOTE: Added min-h-[120px] to fix image size collapse on mobile -->
                 <img
                   src="https://raw.githubusercontent.com/issasafar/healthcore/master/assets/hc_1.jpg"
                   onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=HC+Screen+1';"
                   alt="HealthCore Screenshot 1"
-                  class="w-full h-auto rounded-lg object-cover border-2 border-blue-600 shadow-xl"
+                  class="w-full h-auto rounded-lg object-cover border-2 border-blue-600 shadow-xl min-h-[120px]"
                 />
                 <img
                   src="https://raw.githubusercontent.com/issasafar/healthcore/master/assets/hc_2.jpg"
                   onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=HC+Screen+2';"
                   alt="HealthCore Screenshot 2"
-                  class="w-full h-auto rounded-lg object-cover border border-gray-700"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700 min-h-[120px]"
                 />
                 <img
                   src="https://raw.githubusercontent.com/issasafar/healthcore/master/assets/hc_3.jpg"
                   onerror="this.onerror=null; this.src='https://placehold.co/300x200/4f46e5/ffffff?text=HC+Screen+3';"
                   alt="HealthCore Screenshot 3"
-                  class="w-full h-auto rounded-lg object-cover border border-gray-700 hidden sm:block"
+                  class="w-full h-auto rounded-lg object-cover border border-gray-700 hidden sm:block min-h-[120px]"
                 />
               </div>
 
-              <!-- Right: View More Button -->
+              <!-- Right: View More Button (Now w-full on mobile) -->
               <div
-                class="md:w-1/4 flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl"
+                class="w-full md:w-1/4 flex flex-col items-center justify-center bg-gray-700 p-4 rounded-xl"
               >
                 <p class="text-sm text-gray-300 mb-3 text-center">
                   See the full codebase, technical architecture, and
@@ -505,7 +509,7 @@
                 <div class="col-span-full text-center p-8 rounded-xl border border-gray-700 bg-gray-800 space-y-4">
                     <p class="text-lg font-medium text-gray-300">${message}</p>
                     <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" 
-                       class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
                         <i data-lucide="github" class="w-5 h-5 mr-2"></i> 
                         View All Projects on GitHub
                     </a>
